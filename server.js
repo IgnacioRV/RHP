@@ -5,7 +5,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/api/whoami', (req, res)=>{
 	head = req.headers
 	var obj = {
-		"ip": req.connection.remoteAddress,
+		"ip": req.ip,
 		"language": ((req.headers['accept-language'].split(' '))[0].split(','))[0],
 		"software": req.headers['user-agent'].split('(')[1].split(')')[0]
 	}
